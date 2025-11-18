@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TealV1 テンプレート | ホーム</title>
+    <style>
+        /* これはTealV1の雰囲気を示すためのサンプルCSSです。
+           実際には、独自のCSSファイルを用意してください。
+        */
+        :root {
+            --primary-color: #008080; /* ティール（青緑） */
+            --secondary-color: #38a8a8;
+            --background-color: #f4fcfc;
+            --text-color: #333;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        #header-teal {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #nav-primary ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #005f5f; /* 少し濃いティール */
+        }
+
+        #nav-primary li {
+            float: left;
+        }
+
+        #nav-primary li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #nav-primary li a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #main-content {
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        .section-title-teal {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        #footer-teal {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header-teal">
+        <h1>ウェブサイトのタイトル</h1>
+        <p>TealV1 スタイルのサブタイトル</p>
+    </header>
+
+    <nav id="nav-primary">
+        <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">私たちについて</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        
+        <section id="welcome">
+            <h2 class="section-title-teal">ようこそ</h2>
+            <p>このページは、TealV1のデザインを適用したウェブサイトのメインコンテンツエリアです。青緑色の配色が視覚的な一貫性を提供します。</p>
+            <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">詳細を見る</a>
+        </section>
+
+        <section id="features">
+            <h2 class="section-title-teal">主な特徴</h2>
+            <ul>
+                <li>青緑色（Teal）を基調とした**クリーンなデザイン**</li>
+                <li>**モバイルフレンドリー**な設計（`viewport`設定済み）</li>
+                <li>基本的な**ナビゲーション構造**の包含</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer id="footer-teal">
+        <p>&copy; 2025 TealV1 テンプレート. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
