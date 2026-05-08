@@ -1,120 +1,213 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TealV1 テンプレート | ホーム</title>
+    <title>Research Log - 研究実習記録</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* これはTealV1の雰囲気を示すためのサンプルCSSです。
-           実際には、独自のCSSファイルを用意してください。
-        */
-        :root {
-            --primary-color: #008080; /* ティール（青緑） */
-            --secondary-color: #38a8a8;
-            --background-color: #f4fcfc;
-            --text-color: #333;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f4f0;
         }
-
-        #header-teal {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px;
-            text-align: center;
+        .bg-dark-green { background-color: #1a3c34; }
+        .text-dark-green { color: #1a3c34; }
+        .border-dark-green { border-color: #1a3c34; }
+        .accent-green { background-color: #2d5a4c; }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
         }
-
-        #nav-primary ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #005f5f; /* 少し濃いティール */
+        .card:hover {
+            transform: translateY(-2px);
         }
-
-        #nav-primary li {
-            float: left;
-        }
-
-        #nav-primary li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        #nav-primary li a:hover {
-            background-color: var(--secondary-color);
-        }
-
-        #main-content {
-            padding: 20px;
-            min-height: 400px;
-        }
-
-        .section-title-teal {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-
-        #footer-teal {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
             bottom: 0;
-            width: 100%;
+            width: 2px;
+            background: #1a3c34;
+            opacity: 0.2;
         }
     </style>
 </head>
-<body>
+<body class="text-gray-800">
 
-    <header id="header-teal">
-        <h1>鎌ヶ谷市の特徴</h1>
-        <p>TealV1 以外にあんなものがある？！</p>
+    <!-- Header -->
+    <header class="bg-dark-green text-white py-12 px-6 text-center shadow-lg">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">研究実習・活動記録</h1>
+        <p class="text-green-200 opacity-90">Progressive Research Log & Portfolio</p>
     </header>
 
-    <nav id="nav-primary">
-        <ul>
-            <li><a href="#home">ホーム</a></li>
-            <li><a href="#about">私たちについて</a></li>
-            <li><a href="#services">サービス</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-    </nav>
-
-    <main id="main-content">
+    <main class="max-w-5xl mx-auto px-4 py-8">
         
-        <section id="welcome">
-            <h2 class="section-title-teal">ようこそ</h2>
-            <p>このページは、TealV1のデザインを適用したウェブサイトのメインコンテンツエリアです。青緑色の配色が視覚的な一貫性を提供します。</p>
-            <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">詳細を見る</a>
+        <!-- Project Overview -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-dark-green mb-6 flex items-center">
+                <span class="w-2 h-8 bg-dark-green mr-3 rounded-full"></span>
+                研究概要
+            </h2>
+            <div class="card p-6 md:p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-2">研究テーマ</h3>
+                        <p class="text-lg font-medium leading-relaxed">
+                            [ここに研究タイトルを入力してください。例：深層学習を用いた環境モニタリングの最適化]
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-2">現在のフェーズ</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="px-3 py-1 bg-green-100 text-dark-green text-sm rounded-full font-bold">データ収集・分析</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-2">目的と期待される成果</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            本実習では、〇〇の手法を学び、最終的に××の課題を解決するモデルのプロトタイプを作成することを目指します。
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="features">
-            <h2 class="section-title-teal">主な特徴</h2>
-            <ul>
-                <li>青緑色（Teal）を基調とした**クリーンなデザイン**</li>
-                <li>**モバイルフレンドリー**な設計（`viewport`設定済み）</li>
-                <li>基本的な**ナビゲーション構造**の包含</li>
-            </ul>
-        </section>
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column: Timeline -->
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-bold text-dark-green mb-6 flex items-center">
+                    <span class="w-2 h-8 bg-dark-green mr-3 rounded-full"></span>
+                    活動ログ
+                </h2>
+                
+                <div class="relative space-y-8 pl-10 timeline-line">
+                    <!-- Log Item -->
+                    <div class="relative">
+                        <div class="absolute -left-10 w-10 h-10 bg-dark-green rounded-full flex items-center justify-center border-4 border-white shadow-sm">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-bold text-dark-green">2024.05.08</span>
+                                <span class="text-xs bg-gray-100 px-2 py-1 rounded">実験</span>
+                            </div>
+                            <h4 class="font-bold mb-2">パラメータ調整と再試行</h4>
+                            <p class="text-sm text-gray-600 mb-4">
+                                昨日の結果を受けて、学習率を0.001から0.0005に下げて再学習を開始。収束速度は落ちるが、精度が安定する傾向にある。
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded text-xs font-mono text-gray-500 border-l-2 border-dark-green">
+                                status: running... <br>
+                                accuracy: 0.892 (expected: 0.92)
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Log Item -->
+                    <div class="relative">
+                        <div class="absolute -left-10 w-10 h-10 bg-dark-green rounded-full flex items-center justify-center border-4 border-white shadow-sm">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-sm font-bold text-dark-green">2024.05.01</span>
+                                <span class="text-xs bg-gray-100 px-2 py-1 rounded">文献調査</span>
+                            </div>
+                            <h4 class="font-bold mb-2">関連論文のレビュー</h4>
+                            <p class="text-sm text-gray-600">
+                                既存手法（Author et al., 2023）の問題点を整理。計算コストが高いという課題に対し、今回の軽量化アプローチの優位性を確認。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full mt-8 py-3 border-2 border-dashed border-dark-green text-dark-green font-bold rounded-lg hover:bg-dark-green hover:text-white transition-colors">
+                    + 新しいログを追加
+                </button>
+            </div>
+
+            <!-- Right Column: Stats & Links -->
+            <div class="space-y-8">
+                <!-- Progress Stats -->
+                <div>
+                    <h2 class="text-xl font-bold text-dark-green mb-6">進捗状況</h2>
+                    <div class="card p-6">
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>データセット準備</span>
+                                <span class="font-bold">100%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-dark-green h-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>モデル実装</span>
+                                <span class="font-bold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-dark-green h-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>論文執筆</span>
+                                <span class="font-bold">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-dark-green h-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reference List -->
+                <div>
+                    <h2 class="text-xl font-bold text-dark-green mb-6">重要なリソース</h2>
+                    <div class="card p-4 space-y-3">
+                        <a href="#" class="block p-3 rounded hover:bg-green-50 group">
+                            <div class="text-xs text-gray-400">GitHub Repository</div>
+                            <div class="font-medium group-hover:text-dark-green transition-colors">research-project-2024</div>
+                        </a>
+                        <a href="#" class="block p-3 rounded hover:bg-green-50 group border-t border-gray-100">
+                            <div class="text-xs text-gray-400">Cloud Storage</div>
+                            <div class="font-medium group-hover:text-dark-green transition-colors">Experiment_Results_v2</div>
+                        </a>
+                        <a href="#" class="block p-3 rounded hover:bg-green-50 group border-t border-gray-100">
+                            <div class="text-xs text-gray-400">Library Memo</div>
+                            <div class="font-medium group-hover:text-dark-green transition-colors">先行研究まとめ.docx</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sticky Note Area -->
+                <div>
+                    <h2 class="text-xl font-bold text-dark-green mb-6">クイックメモ</h2>
+                    <textarea class="w-full card p-4 text-sm focus:ring-2 focus:ring-dark-green focus:outline-none min-h-[150px] placeholder-gray-400" placeholder="気づいたことや、次回のTodoをメモ..."></textarea>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer id="footer-teal">
-        <p>&copy; 2025 TealV1 テンプレート. All rights reserved.</p>
+    <footer class="bg-white border-t mt-20 py-8 text-center text-gray-500 text-sm">
+        &copy; 2024 Research Portfolio System | Developed for Research Internship
     </footer>
 
+    <script>
+        // 将来的な機能：ログの保存やフィルタリングなどのスクリプトをここに追加可能
+    </script>
 </body>
 </html>
+
+```
